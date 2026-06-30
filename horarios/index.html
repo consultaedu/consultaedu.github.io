@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta do Horário de aula</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Horários do Semipresencial. Consulte seus horários e acesse o Google Classroom.">
+
+<meta property="og:title" content="ConsultaEdu">
+<meta property="og:description" content="Horários do Semipresencial. Consulte seus horários e acesse o Google Classroom.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://consultaedu.github.io/">
+<meta property="og:image" content="https://consultaedu.github.io/preview.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ConsultaEdu">
+<meta name="twitter:description" content="Horários do Semipresencial.">
+<meta name="twitter:image" content="https://consultaedu.github.io/preview.png">
+</head>
+<body>
+
+<div class="page-bg">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<header class="hero">
+  <nav class="topbar">
+  <div class="brand">
+    <img src="grupo-faveni.png" alt="Grupo Educacional FAVENI" class="brand-logo">
+
+    <div class="brand-divider"></div>
+
+    <div class="brand-text">
+      <strong>ConsultaEdu</strong>
+      <span>Consulta do Horário de aula</span>
+    </div>
+  </div>
+
+  <a class="topbar-link" href="https://consultaedu.com.br/">
+    ← Voltar ao Portal
+  </a>
+</nav>
+
+  <div class="hero-content">
+    <div class="hero-copy">
+      <div class="eyebrow">Horários online</div>
+      <h1>Consulte os horários das suas aulas</h1>
+      <p>
+        Selecione sua instituição e curso para visualizar a aula acontecendo agora,
+        a próxima aula e o horário completo.
+      </p>
+
+      <div class="hero-badges">
+        <span>🟢 Aula atual</span>
+        <span>⏰ Próxima aula</span>
+        <span>📚 Grade completa</span>
+      </div>
+    </div>
+
+    <div class="hero-panel">
+      <div class="mini-card active">
+        <span>🟢</span>
+        <div>
+          <strong>Aula em tempo real</strong>
+          <small>Veja se existe aula acontecendo agora</small>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <span>📅</span>
+        <div>
+          <strong>Horário completo</strong>
+          <small>Consulta organizada por dia da semana</small>
+        </div>
+      </div>
+
+      <div class="mini-card">
+        <span>🎓</span>
+        <div>
+          <strong>Por curso</strong>
+          <small>Escolha a instituição e o curso desejado</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="main-layout">
+
+  <section class="search-card">
+    <div class="card-header">
+      <div class="card-icon">🔎</div>
+      <div>
+        <h2>Consultar horários</h2>
+        <p>Informe sua instituição e curso para continuar.</p>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="faculdade">Instituição</label>
+      <div class="select-shell">
+        <span>🏫</span>
+        <select id="faculdade">
+          <option value="">Selecione a faculdade</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="curso">Curso</label>
+      <div class="select-shell">
+        <span>🎓</span>
+        <select id="curso" disabled>
+          <option value="">Selecione o curso</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="input-group">
+      <label for="periodo">Período</label>
+      <div class="select-shell">
+        <span>📘</span>
+        <select id="periodo" disabled>
+          <option value="">Selecione o período</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section id="resultado" class="results-layout oculto">
+  <div class="result-card destaque" id="aulaAgora"></div>
+  <div class="result-card destaque secundaria" id="proximaAula"></div>
+
+  <div class="result-card grade-card">
+    <h2>📅 Horário completo</h2>
+    <div id="gradeHorarios"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>ConsultaEdu | Consulta do Horário de aula</span>
+  <span>Versão 1.0 - By Marcos Daleprane</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
