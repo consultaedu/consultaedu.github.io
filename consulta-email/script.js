@@ -1,4 +1,3 @@
-alert("TESTE MARCOS 123");
 const API_URL = "https://script.google.com/macros/s/AKfycbxjZc4ZAbMdHEf38zuprYlcnzwDQsWiSf64DHX48RPtqGB7ShiHncpGZurRSisZXShbvg/exec";
 
 const logos = {
@@ -11,8 +10,10 @@ let ultimaConsulta = 0;
 
 function normalizar(texto = "") {
   return texto
+    .toString()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\u00A0/g, " ")
     .replace(/\s+/g, " ")
     .toLowerCase()
     .trim();
@@ -42,7 +43,7 @@ async function consultar() {
   const retorno = document.getElementById("retorno");
   const loading = document.getElementById("loading");
   const botao = document.getElementById("btn");
-  const q = campo.value.replace(/\s+/g, " ").trim();
+  const q = normalizar(campo.value);
 
   if (!q) {
     renderMessage("erro", "⚠️ Atenção", "Digite seu nome completo ou matrícula para realizar a consulta.");
